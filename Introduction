@@ -1,0 +1,25 @@
+## Introduction
+
+This site is a *work in progress*. Early on (what you are seeing now), it will be a little disjointed as I develop the flow of the various subjects and work out how to present it in a way that is not daunting to new quadcopter users. 
+
+It is not necessary to know all the minute details about the physics and environment surrounding the operation of rotary wing aircraft, but some basic concepts should help users of all levels from avoiding the aerodynamic pitfalls that are inherent in the hobby.
+
+I will be drawing heavily on my own experience of flying and instructing on helicopters but will also be using this resource to develop the relatively new field of quadynamics. Given some of the fundamental differences between the two platforms there is plenty of work to do.
+
+Where Next
+---
+I intend to make this discussion as readable as possible, but there will be times where physical and mathematical concepts, such as vectors, forces, volume and density, will be required. I promise that I will keep the concepts as basic and generic as possible.  
+
+Broad concepts that must be discussed include:
+
+* Definition of key terms
+* Key differences between helicopters and quadcopters
+* The atmosphere and how it changes
+* Characteristics of an aerofoil
+* Properties of a rotor or propeller
+* Rotor dynamics
+* Control
+* Hovering and Ground Effect
+* Forward Flight
+* Hazardous Conditions
+
