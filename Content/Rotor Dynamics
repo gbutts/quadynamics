@@ -1,0 +1,78 @@
+%%Title: Rotor Dynamics
+%%Version: v1.0
+%%Date: 2016-10-05 08:35:54
+#Rotor Dynamics
+
+>###tl;dr
+>Spinning rotors (or propellers) act like a disk that produces *Lift*. For ease of interpretation, once the basics are understood, we can think of these disks in isolation or as a group to understand how quadcopters fly and are controlled.
+>
+>The *CPU* of the quadcopter has sensors that know the aircraft’s position and attitude and receivers that know what you, as the operator, want it to do. The CPU then sends commands to the electric motor to increase or decrease its RPM to change the lift produced by the connected rotor. When multiple rotors on a quadcopter are commanded individually to vary their lift, this can be used to steer, climb and descend the quadcopter.
+
+##Forces on a Rotor Disk
+###Vectors in the Hover
+As we have seen previously, with the theory of flight we prefer to break down the various forces that apply to lift producing aerofoils or rotors into four main vectors. For convenience and consistency, these same four vectors can be defined for a rotor disk. 
+
+Fundamentally, a spinning rotor disk provides *Rotor Thrust* perpendicular to the disk by forcing air through the blades and away from the disk. This is the principle of the cooling fan you may use in summer. Rotor thrust can be thought of as a vector that points in the opposite direction to the movement of air. In the case of a quadcopter in the hover, the rotor thrust vector points vertically upwards and the displaced air, called ‘downwash’, is accelerated downwards.
+
+When hovering in still air, where the disk is moving neither vertically or horizontally,   the rotor thrust counters the weight of the aircraft in a similar way to the aerofoil we have discussed previously. In a vector sense, the rotor thrust vector is vertically upwards and the *Weight* vector is vertically downwards as depicted in Figure 6.1:
+(img)
+Here you can see the green rotor thrust vector ‘equal and opposite’ to the weight vector. These vectors both represent forces, rotor thrust being the force applied to the rotor disk by the acceleration of the downwash; and weight being the mass of the system multiplied by the acceleration due to gravity.
+
+Note also in Figure 6.1 the representation of the *Rotor RPM* by the crimson circular arrow. As we have discussed previously, in quadcopters the *CPU* controls the amount of rotor thrust produced by varying the RPM of the rotor or *RRPM*. In these graphics, the magnitude of that RRPM is represented by the thickness of the crimson arrow.
+
+###Tilting the Disk
+Let’s have a look at what happens to the vectors if we now tilt our rotor disk. We will worry about *how* we do that a little later on.
+
+Here is a depiction of our rotor disk tilted forward 10°:
+(img)
+The *RRPM* hasn’t changed and therefore the *Rotor Thrust* is the same as in Fig 6.1. But because the rotor thrust vector is now tilted 10° forward it no longer balances the *Weight* vector. Left unchanged, the disk will move forward and descend.
+
+As our desire is to remain at a constant altitude, the CPU must counter this descent by increasing the RRPM and therefore the rotor thrust as seen in Fig 6.3:
+(img)
+The increase in the magnitude of the ‘big green arrow’ is a little hard to see, but it is there. An easier way to see this change, and subsequently imagine it in flight with your quad, is to break down the Rotor Thrust vector into vertical and horizontal components. Fig 6.4 does this:
+(img)
+So here you can see that the vertical component (yellow vector), or *Lift*, is now equal to, and opposes, the weight (orange vector). So the rotor disk remains at a constant altitude.
+
+You will have noticed that most quadcopters don’t have propellers on the front of them or jet engines firing out the back, so in Figure 6.4 we can also begin to see how rotor disks, and therefore quadcopters, get to move around. 
+
+The small blue horizontal vector in 6.4 can be thought of as the *Thrust* vector. As it is currently unopposed, the rotor disk will accelerate from the hover to some forward speed, all the while remaining in level flight (that is, not climbing or descending).
+
+Hopefully, you may by now be starting to see similarities with the discussion we had on *Aerofoils*, which you can review by opening in a new tab by clicking [here].
+
+Early on, when the Thrust vector is unopposed the disk will accelerate. But over time, the *Drag* or wind resistance of the disk, will reduce the acceleration and the disk will stabilise at a velocity, neither accelerating or decelerating. In this stable state, all forces on the disk will be balanced. The *Lift* (or vertical component of *Rotor Thrust*) will balance *Weight* and the *Thrust* (horizontal component) will be balanced by *Drag*. 
+
+To further increase speed, the disk may be tilted further forward to increase the magnitude of the Thrust vector. The disk would increase its velocity until once again Thrust and Drag were balanced and the disk would maintain this new, constant velocity.
+
+Of course, if the Rotor Thrust wasn’t increased at the same time, the Lift would no longer equal the Weight and the disk would descend. To maintain a constant altitude, these two vectors must always remain balanced. To increase Rotor Thrust in a quadcopter, the RRPM must be increased.
+
+Figure 6.5 illustrates the situation when a rotor disk is in stable, unaccelerated flight with a 20° ‘tilt’ or pitch attitude.
+(img)
+In theory, we could keep tilting the rotor disk forward and continue accelerating. But there are two practical reasons why this won’t work forever. 
+
+Firstly, the power available to the rotor disk, in the case of quadcopters from the battery, is limited and so the ability to spin the rotor and ‘grow’ the green Rotor Thrust vector, and hence the blue Thrust vector, is limited.
+
+And second, the ‘trigonometry’ of the vectors means that the more we tilt the green vector, the exponentially longer it must be to allow the yellow Lift vector to continue to match the orange Weight vector.
+
+Practically, about 40° is likely to be a limit as shown in Figure 6.6:
+(img)
+Here you can see high RRPM, indicated by the thick crimson circular arrow, producing maximum Rotor Thrust, with Weight and Lift balanced, and Thrust and Drag balanced.
+
+(By the way, for those vector analysts out there, I’m aware that there are unaddressed turning moments in my diagrams and that the whole thing is a little more complex than I portray, but we are talking basics here.)
+
+###Summary
+So, we have learned that if we change the *RRPM* of our *Rotor*, the *Rotor Disk* produces more *Rotor Thrust*. In these diagrams we portray this as the ‘big green arrow’. If we want to hover our rotor disk in nil wind, we hold the rotor disk horizontal, allow the big green arrow to remain vertical, and adjust the RRPM so that the Rotor Thrust is equal and opposite to the *Weight* of the disk. If we want the disk to climb, the RRPM is increased therefore increasing Rotor Thrust to be greater than the Weight and the disk will climb. Descending is the opposite, reducing RRPM will reduce Rotor Thrust.
+
+When the disk is tilted, some of the Rotor Thrust acts in the horizontal plane. This causes the disk to move in the direction of the tilt. This movement can be sideways or backwards of course, which is how helicopters and quads move in directions that are not the way they are heading.
+
+The downside of tilting the disk is that the vertical component of the Rotor Thrust or *Lift* is reduced and unless we increase RRPM, the disk will descend. This is especially the case if we tilt the disk excessively, expecting too much acceleration, and exceeding the maximum power or RPM of the motor. 
+
+##What’s Next?
+So how do we tilt the rotor disk? 
+
+In a helicopter, it is done with a sophisticated series of mechanisms that can change the pitch (or *Angle of Attack*) of the rotor blades as they spin around. Words like ‘swashplate’, ‘pitch change links’, ‘cyclic’ and ‘collective’ are things you will see if you read about this. 
+
+Quadcopters don’t have or need such complexity. The rotor blades, and hence rotor disk, are fixed so that they always rotate in the same plane as the body of the quad. The necessary tilting of the Rotor Thrust vector is done by tilting the whole quad. How this is done is discussed in the next chapter.
+
+## Further Reading
+###Wikipedia
+[Helicopter Flight Controls]
