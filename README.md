@@ -1,0 +1,2 @@
+# quadynamics
+Aerodynamics for quadcopters
