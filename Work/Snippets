@@ -1,0 +1,10 @@
+#Snippets
+
+%%Open in new tab:
+<highlight the final “> in the URL and paste:
+" target="_blank">_
+
+%%Image caption:
+[caption id="Fig 4.1" align="aligncenter" width="1000"]<img class=“…. /> Fig 4.1 - Aerofoil at Zero Degrees[/caption]
+
+<p style="padding-left: 30px;">Lift = C<sub>L</sub> ½ ρ v<sup>2</sup> A</p>
