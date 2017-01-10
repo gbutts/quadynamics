@@ -1,0 +1,6 @@
+%%Title: Contact
+%%Version: v1.0
+%%Date: 17 Jul 2016
+##Contact
+
+Feedback is welcome. If you wish to contact me, please fill in this contact form. [contact-form][contact-field label="Name" type="name" required="1"/][contact-field label="Email" type="email" required="1"/][contact-field label="Website" type="url"/][contact-field label="Comment" type="textarea" required="1"/][/contact-form]
