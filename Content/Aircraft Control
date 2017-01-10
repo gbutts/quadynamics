@@ -1,0 +1,19 @@
+%%Title: Aircraft Control
+%%Version: v1.0
+%%Date: 2016-10-05 12:13:51
+#Aircraft Control
+
+>###tl;dr
+>In a typical quadcopter, four rotors are mounted in the extremities of the fuselage to provide *Lift* and control.
+
+##Configuration
+
+quad, quad (fore/aft), hex
+
+##Control in the Hover
+pitch, roll yaw
+
+##Control in Flight
+Note that ‘forward’ is arbitrary and really just a requirement of the camera
+
+climb, descent, translate, yaw (skid)
