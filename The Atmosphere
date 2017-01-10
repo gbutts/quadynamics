@@ -1,0 +1,52 @@
+%%Title: The Atmosphere
+%%Version: v1.4
+%%Date: 8 Aug 2016
+## The Atmosphere
+
+>###tl;dr
+>
+>The atmosphere is complex. You should know that many factors that you may not have thought about could affect the performance  of your quad. Your *Elevation* above sea level is one, as is the effect of wind and turbulence.
+>
+>Greater temperatures and/or height above sea level leads to reduced quad flying performance. Failing to be more cautious in windy or turbulent conditions may also be hazardous.
+>
+>It is possible to lose control of your quad if you don't consider these and other aerodynamic effects.
+
+In this, and any other discussion, a term with a capital letter and in *italics* is defined on the [Key Terms] page.
+
+There are many atmospheric properties that influence ’normal’ or commercial aviation, such as flight in cloud, icing, and transonic effects that are not relevant here. But there are three qualities of the atmosphere that do relate to flying quads at the altitudes that they are operated (Quadsphere?). Let’s discuss them. 
+
+## Air Density
+
+Air density is affected by three main factors - altitude above sea level, temperature and humidity. The higher any or all of these are, the less dense, or thinner, the air.
+
+For example, at Denver CO - roughly 5,500 feet above sea level, on a standard day the air is only 86% of the sea level density.
+
+As you will see soon, *Lift* is produced as an aerofoil moves through the air. The *Lift* produced is proportional to a number of factors, with air density being the main one. So it follows that *Lift* (and therefore the *Weight* that an aircraft can carry) reduces as the *Density Altitude* increases.
+
+Air density is usually represented by the greek letter **ρ** (rho) and Wikipedia has [more info] if you need it.
+
+## Wind
+
+Wind is simply the movement of air relative to the ground. When a quad is airborne, its flying capability is unaffected by the wind (if we ignore turbulence for the moment). Its *Airspeed*, the speed with reference to the surrounding air, is what matters when considering the performance of its rotors and how fast or high it can go.
+
+Normally, an aircraft's *Airspeed* performance is only constrained by *Air Density*. The *Thrust* it's engines produce and the *Lift* its wings or rotors can produce are both limited similarly. 
+
+However, with GPS-equipped quads, whose maximum speeds are usually limited by a GPS sensed *Ground Speed*, wind can become a factor at higher speeds, especially with high-performance quads. 
+
+The effect of the *Wind* is really only relevant as the quad approaches the ground. As we will see later, an understanding of the *Wind* and how it may impact on the desired flight profile is crucial to avoid some of the more dangerous conditions, such as Vortex Ring State. We will investigate this further in [Forward Flight].
+
+
+## Turbulence
+
+Turbulence is created by changes in the wind vector, that is a change in its speed and/or direction. These changes may be small, and in our quad world, produced in very isolated areas for short periods of time. For example, if you are flying downwind of a single tree your quad may experience significant turbulence.
+
+As we will find out later, the *Lift* any aerofoil produces is proportional to the speed it is moving through the air. If the wind vector changes, this changes the airflow over the aerofoil causing a change in the *Lift* produced. 
+
+The turbulence we feel in an aircraft is the effect of the rapidly changing *Lift* produced by the wings of that aircraft. It can be uncomfortable.
+
+With a quad, turbulence is not about comfort but instead can cause control difficulties as the software struggles to sense the quad’s attitude and altitude changes and send the required control signals to the appropriate rotors. This can especially be a problem when the quad is near to the ground, landing or taking off. This is one of the reasons that your quad manufacturer may advise you not to fly it in high winds.
+
+##Further Reading
+
+If you are interested to know a little more about the fundamentals relating to the atmosphere, here is some [good background] courtesy of Decoded Science.
+
