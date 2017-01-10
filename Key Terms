@@ -1,0 +1,35 @@
+%%Title: Key Terms
+%%Version: v1.3
+%%Date: 16 Aug 2016
+
+##Key Terms
+
+Knowledge of these terms will help you understand the more in-depth concepts discussed here. I have endeavoured to keep them consistent with the equivalent terms in helicopter aerodynamics to avoid confusion. Terms that are not relevant to quadcopters will not be listed.
+
+* **Absolute Altitude (above ground level - AGL)** - This is the quad's height (in feet or metres) above the ground. In most modern quads, the software/telemetry actually measures the height above the GPS elevation of the take off location. 
+* **Aerofoil** - The cross section profile of the *Rotor* blade. 
+* **Air density** - The local density of the air. This also takes account of the air temperature and humidity.
+* **Airspeed** - The quad's velocity relative to the surrounding air. The aerodynamics of aircraft and rotors depend on *Airspeed*, not *Ground Speed*.
+* **Angle of attack (AoA)** - The angle between the *Chord Line* and the *Relative Air Flow*. 
+* **Camber** - The ‘shape’ of an *Aerofoil*. The camber line is a line equidistant from the upper and lower surfaces of an *Aerofoil*.
+* **Chord Line** - A straight line connecting the leading edge and the trailing edge of an aerofoil. 
+* **CPU** - Central Processing Unit of a quad. This is the brains of the aircraft and has the various aerodynamic qualities of the rotor system hard coded so it can control the aircraft dynamically with the response times required.
+* **Density Altitude (DA)** - The *Pressure Altitude* when adjusted for temperature. For a given *Pressure Altitude*, the greater the temperature, the higher the *Density Altitude*. The aerodynamic performance of a *Rotor* system is proportional to the *Density Altitude* it is operating in.
+* **Drag** - The horizontal, rearwards force that is produced by moving a body (aircraft or *Rotor*) through the air. Sometimes called ‘wind resistance’.
+* **Elevation** - The height (in feet or metres) of the terrain above sea level. This is not the quad's altitude.
+* **Ground speed** - The velocity of the quad with reference to the ground, which is not necessarily the same as its airspeed. A GPS measures *Ground Speed*. Most modern quads have some reference to GPS for speed control.
+* **Lift** - The vertical force produced by the rotors of a quad to overcome the force of gravity. This is the vertical component of the *Total Reaction* on the *Aerofoil*.
+*  **Lift Formula** - A convenient summary of the variables that affect the amount of *Lift* produced by a particular *Aerofoil*. It is usually expressed as Lift = CL ½ **ρ** v2 A
+* **Pressure Altitude (above mean sea level - AMSL)** - Pressure altitude is an aircraft's altitude as determined by air pressure. It is referenced to sea level and hence has no reference to the surrounding terrain. *Elevation* plus *Absolute Altitude* approximately equals *Pressure Altitude*.
+* **Relative Air Flow (RAF)** - The flow of air relative to the *Aerofoil* as the rotor rotates and produces lift.
+* **Rotor Revolutions per minute (RRPM)** - The number of revolutions of the rotor in each minute.
+* **Rotor** - In this guide I use the term rotor rather than propeller. I know some people won't agree but my reasons are (1) for commonality with helicopter principles and (2) due to a general concept in an airborne sense, where *rotors* provide lift (ie oppose weight) and *propellers* provide *Thrust* (ie oppose *Drag*). 
+* **Rotor disk** - An imaginary disk described by the spinning rotor.
+* **Rotor thrust** - The total force provided by the *Rotor Disk* when operating. *Rotor Thrust* changes roughly proportionally with changes in *Rotor RPM*
+* **Span** - The length of a single blade from root to tip.
+* **Taper** - The span-wise reduction in the length of the *Chord Line* from blade root to tip.
+* **Thrust** - The horizontal propulsive force provided by the *Rotor Thrust*.
+*  **Total Reaction (TR)** - The force applied to the *Aerofoil* as it moves through the air. This force is usually broken down into its component vectors *Lift* and *Drag*.
+* **Velocity** - The speed vector. Velocity has a magnitude (speed) and a direction (in our case, usually roughly horizontally into the *RAF*).
+* **Washout** - The change (usually a reduction) in the angle of the chord relative to the hub along the span of a rotor blade or wing.
+* **Weight** - The force (ie Mass times the acceleration due to gravity, written mathematically as W=mg) applied to the quad by the Earth. To hover the quad without climbing or descending, *Lift* must equal *Weight*.
