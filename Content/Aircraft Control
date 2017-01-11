@@ -1,16 +1,28 @@
 %%Title: Aircraft Control
-%%Version: v1.0
-%%Date: 2016-10-05 12:13:51
+%%Version: v1.1
+%%Date: 2017-01-11 10:07:46
 #Aircraft Control
 
 >###tl;dr
->In a typical quadcopter, four rotors are mounted in the extremities of the fuselage to provide *Lift* and control.
+>In a typical quadcopter, four rotors are mounted in the extremities of the fuselage to provide *Lift* and control. Hexacopters use 6 rotors to provide the same control, but are usually capable of carrying a greater payload/camera.
 
 ##Configuration
+The primary quadcopter configuration, and the one I will deal mainly with here, is an aircraft that has a central fuselage and four *Rotors* in each ‘corner’. 
 
-quad, quad (fore/aft), hex
+The fuselage normally houses the *CPU*  and the battery. It also provides mounts for ancillaries, such as a camera or a hopper. A fixed, or retractable, landing gear is also mounted below.
+
+Quadcopters may also be configured with two rotors fore and aft and two laterally. From an aerodynamic point of view there is little difference with this config, as the ‘front’ of a quadcopter is often irrelevant to its operation.
+
+Hexacopters have six rotors and usually have retractable landing gear. They are  usually designed to be larger and carry greater payloads. Aerodynamic considerations are broadly similar. I will deal with specific hex issues later in this work.
+
+In all cases, the rotors are mounted rigidly, usually at the end of pylons or outriggers. The rotor is mounted horizontally with it’s *Thrust* axis vertically upwards. The rotor is driven by an electric motor, also mounted on the pylon, which is powered electrically and controlled by the *CPU*.
+
+The rigid mount means that the rotor can spin but cannot move in the pitch or roll axes relative to the body (fuselage and outriggers) of the quadcopter.
 
 ##Control in the Hover
+
+
+climb/desc
 pitch, roll yaw
 
 ##Control in Flight
