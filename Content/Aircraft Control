@@ -17,9 +17,27 @@ Hexacopters have six rotors and usually have retractable landing gear. They are 
 
 In all cases, the rotors are mounted rigidly, usually at the end of pylons or outriggers. The rotor is mounted horizontally with it’s *Thrust* axis vertically upwards. The rotor is driven by an electric motor, also mounted on the pylon, which is powered electrically and controlled by the *CPU*.
 
-The rigid mount means that the rotor can spin but cannot move in the pitch or roll axes relative to the body (fuselage and outriggers) of the quadcopter.
+The rigid mount means that the rotor can spin of course, but cannot move in the pitch or roll axes relative to the body (fuselage and outriggers) of the quadcopter. 
 
 ##Control in the Hover
+As discussed in the previous chapter, the only ‘control’ we have over the rotors is increasing or decreasing the *RRPM*. If you have skipped that, you should go [back] and review it now.
+
+These changes in RRPM are controlled by the CPU, it would be far too hard to do this manually. In most modern quads, the CPU receives internal control inputs from the GPS receiver and external inputs from your controller. Higher performance quads can be controlled without a GPS, but for now, we will only consider the more basic concept where a GPS keeps the quad stable and, with our controller we can move it where we want it to go.
+
+The GPS provides a position to the CPU in three dimensions. That is, laterally in the form of a latitude and longitude, and vertically, in the form of an altitude. This altitude position is actually relative to the centre of the earth, but the CPU is clever and takes the initial, start up position and calls that zero and measures subsequent altitudes relative to that position.
+
+The CPU is programmed to maintain the current GPS position unless it receives an external input from the controller in your hand. You control this external input by moving the two control sticks. These sticks can move the quad in the following ways:
+* Climb and descend
+* Fore and aft
+* Sideways, and
+* Yaw, that is changing the heading of the quad around its vertical axis.
+
+These changes can be made in isolation, that is one control stick is moved in one direction only; or both sticks can be moved in a coordinated way to make the quad move in three dimensional space efficiently.
+
+Let’s start by assuming that our quad is in a stable hover about 2 metres or 6 feet above the ground as shown in Figure 7.1.
+
+
+
 
 
 climb/desc
