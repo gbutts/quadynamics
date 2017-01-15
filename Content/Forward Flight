@@ -1,0 +1,41 @@
+%%Title: Forward Flight
+%%Version: v1.0
+%%Date: 2017-01-15 14:31:17
+#Forward Flight
+
+>###tl;dr
+>In a typical
+
+
+
+##Lateral Movement
+It is important to understand that, from an aerodynamic point of view, there is no front, back or side to a quadcopter. Moving a quad forward, backwards or sideways is aerodynamically identical. It is only when a payload, such as a camera, is mounted that we need to know which end is the ‘front’.
+
+So, whilst I will now discuss fore and aft motion, you need to remember that all that follows also applies to lateral movement.
+
+Moving a quad laterally follows the same concepts that we have already discussed in [Rotor Dynamics]. You should revise these concepts if it has been a while since you read that chapter.
+
+To get a quad moving forward without losing altitude, two things must happen:
+* The Big Green Arrow, representing the combined *Rotor Thrust* vectors of the four rotors, must be tilted forward to provide a horizontal component, which we call *Thrust*.
+* And the Big Green Arrow must be lengthened so the vertical component or *Lift* still balances the *Weight*.
+
+Given that the *Rotor* axes, and hence the Rotor Thrust vectors, are fixed with relation to the quad’s fuselage, we must tilt the entire fuselage in the direction we want the quad to move. 
+
+To move the quad forward the *CPU* must tilt the whole quad forward. To do that, it increases the Rotor Thrust on the two rear rotors by increasing their *RRPM*. Figure 7.5 shows the initial action the CPU has taken before the quad has started to pitch forward.
+(img)
+You can see that the RRPM of the two rear rotors has increased, giving a greater Rotor Thrust on those two rotors, but as yet, the quad has not pitched forward or commenced to move forward.
+
+Some internal command changes are occurring within the CPU too. It ceases to maintain its hover position with reference to the GPS and starts to pursue a forward *Ground Speed* as commanded by the magnitude of the control input we have put into the control stick in our hand. It also determines that a small amount of increased Rotor Thrust is required to help increase the length of the Big Green Arrow as the quad pitches, so that the *Lift* still equals the *Weight*.
+
+Figure 7.6 shows the situation as the quad settles into a stable forward ground speed with all forces in balance.
+(img)
+If you look closely you can see that the horizontal (cyan) *Thrust* vector is equally opposed by the (red) *Drag* vector and the (yellow) *Lift* vector balances the (orange) *Weight* vector. The quad is said to be un *unaccelerated level flight*.
+
+All rotors are spinning faster than they were in the hover to maintain the power required to keep the quad at the same altitude and overcome drag to move is forward at the desired speed.
+
+
+pitch, roll yaw
+
+##Control in Flight
+
+climb, descent, translate, yaw (skid)

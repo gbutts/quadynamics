@@ -1,10 +1,19 @@
 %%Title: Aircraft Control
 %%Version: v1.1
 %%Date: 2017-01-11 10:07:46
-#Aircraft Control
+#Aircraft Configuration and Hover Control
 
 >###tl;dr
 >In a typical quadcopter, four rotors are mounted in the extremities of the fuselage to provide *Lift* and control. Hexacopters use 6 rotors to provide the same control, but are usually capable of carrying a greater payload/camera.
+> 
+> In the hover we can control the quadcopter in all three axes (pitch, roll and yaw) by adjusting the *RRPM* and therefore the *Rotor Thrust* of each *Rotor*. Controlling these three axes allows us to move the quad vertically and horizontally through the air.
+
+##What We Already Know
+So far we have looked at how a moving *Aerofoil*, and a spinning*Rotor disk*, produces a force by moving air downwards. For the Rotor disk we calls this force *Rotor Thrust*. We have determined that for a quadcopter the only way we have to vary that force is to change and control the angular velocity of the *Rotor* blades. The conventional way to measure this is called the *Rotor RPM* or *RRPM*.
+
+We know that the faster the rotor spins, the more Rotor Thrust it produces. We also know that we can break the Rotor Thrust vector down into vertical (*Lift*) and horizontal (*Thrust*) components. In stable flight, these components balance and oppose the aircraft’s *Weight* and *Drag* vectors.
+
+We will now look at how we can use a combination of rotor disks to fly and control a quadcopter. 
 
 ##Configuration
 The primary quadcopter configuration, and the one I will deal mainly with here, is an aircraft that has a central fuselage and four *Rotors* in each ‘corner’. 
@@ -13,15 +22,18 @@ The fuselage normally houses the *CPU*  and the battery. It also provides mounts
 
 Quadcopters may also be configured with two rotors fore and aft and two laterally. From an aerodynamic point of view there is little difference with this config, as the ‘front’ of a quadcopter is often irrelevant to its operation.
 
-Hexacopters have six rotors and usually have retractable landing gear. They are  usually designed to be larger and carry greater payloads. Aerodynamic considerations are broadly similar. I will deal with specific hex issues later in this work.
+Hexacopters have six rotors and often have retractable landing gear. They are usually designed to be larger and carry greater payloads. Aerodynamic considerations are broadly similar. I will deal with specific hex issues later in this work.
 
 In all cases, the rotors are mounted rigidly, usually at the end of pylons or outriggers. The rotor is mounted horizontally with it’s *Thrust* axis vertically upwards. The rotor is driven by an electric motor, also mounted on the pylon, which is powered electrically and controlled by the *CPU*.
 
 The rigid mount means that the rotor can spin of course, but cannot move in the pitch or roll axes relative to the body (fuselage and outriggers) of the quadcopter. 
 
+###Torque Reaction
 You may have noticed that most helicopters have a tail rotor as well as a main rotor. Without getting too technical, the tail rotor is required to counter the torque reaction on the helicopter’s fuselage caused by the engine and transmission driving the main rotor. If you want to know more, you can read more about helicopter anti-torque design features [here].
 
-In the case of quadcopters, this torque reaction from the electric motors turning each rotor still exists, but the designers counter it with an elegant concept that does away with the requirement and weight of an anti-torque system but still provides the lift and control required. By changing the direction of rotation of two of the four rotors the torque reactions usually cancel out. That is why you will notice that adjacent rotors have their blades mounted so the angle of attack is opposite and those rotors rotate in opposite directions. 
+In the case of quadcopters, this torque reaction from the electric motors turning each rotor still exists, but the designers counter it with an elegant concept that does away with the requirement and weight of an anti-torque system but still provides the lift and control required. 
+
+By changing the direction of rotation of two of the four rotors the torque reactions usually cancel out. That is why you will notice that adjacent rotors have their blades mounted so the angle of attack is opposite and those rotors rotate in opposite directions. 
 
 ##Control in the Hover
 As discussed in the previous chapter, the only ‘control’ we have over the rotors is increasing or decreasing their *RRPM*. If you have skipped that discussion, you should go [back] and review it now.
@@ -56,12 +68,6 @@ So, when the CPU spins each rotor faster, each one produces more *Lift*. The tot
 Similarly, if you want the quad to descend, moving the relevant control stick commands the CPU to reduce the RRPM of all rotors so that less lift is produced and the lift vector has a lesser magnitude than the weight vector.
 (img)
 
-##Lateral Movement
-It is important to understand that, from an aerodynamic point of view, there is no front, back or side to a quadcopter. Moving a quad forward, backwards or sideways is aerodynamically identical. It is only when a payload, such as a camera, is mounted that we need to know which end is the ‘front’.
+##Yawing
 
 
-pitch, roll yaw
-
-##Control in Flight
-
-climb, descent, translate, yaw (skid)
