@@ -4,55 +4,60 @@
 #Forward Flight
 
 >###tl;dr
->Moving your quad in three dimensions is usually intuitive, simply requiring manipulating the two control sticks to make it do what you want.
+>Moving your quad in three dimensions is usually intuitive, simply requiring manipulation of the two control sticks to make it do what you want.
 > 
-> Moving the quad horizontally involves the CPU changing the rotor RPM of each rotor in a coordinated way to grow and tilt the Big Green Arrow to propel the quad around the sky.
+> So to move the quad in a combination of horizontal and vertical flight, you are actually commanding the CPU to change the RPM of each rotor in a coordinated way to grow and tilt the Big Green Arrow to propel the quad around the sky.
 >  
-> There are limits to its speed though, both physically and legally. This Chapter discusses some of these issues.
+> There are limits to its speed though, both physically and legally. This chapter discusses some of these issues.
 
 ##Horizontal Movement
 
-Whilst hovering is a key part of operating a quad, for example obtaining a stable camera platform, it would not be a lot of use if a quad could not move around.
+Whilst hovering is a key part of operating a quad, for example to obtain a stable camera platform, it would not be a lot of use if a quad could not move around.
 
-Firstly, it is important to understand that, from an aerodynamic point of view, there is no front, back or side to a quadcopter. Moving a quad forward, backwards or sideways is aerodynamically identical. It is only when a payload, such as a camera, is mounted that we need to know which end is the ‘front’.
+Moving a quad follows the same concepts that we have already discussed in [Rotor Dynamics]. You should revise these concepts if it has been a while since you read that chapter. 
 
-So, whilst I will now discuss fore and aft motion, all that follows also applies to lateral movement.
+Before we go too far, it is important to understand that from an aerodynamic point of view, there is no front, back or side to a quadcopter. Moving a quad forward, backwards or sideways is aerodynamically identical. It is only when a payload, such as a camera, is mounted that we need to know which end is the ‘front’.
 
-Moving a quad laterally follows the same concepts that we have already discussed in [Rotor Dynamics]. You should revise these concepts if it has been a while since you read that chapter.
+So, whilst I will now discuss forward motion, all that follows also applies to rearwards and lateral movement.
+
 
 ###Forward Flight
 
-To get a quad moving forward without losing altitude, two things must happen to the combined *Rotor Thrust* vectors of the four rotors (or Big Green Arrow):
-* It must be tilted forward to provide a horizontal component, which we call *Thrust*, and
-* It must be lengthened so the vertical component or *Lift* still balances the *Weight*.
+Remember that the [Aircraft Control] chapter explained that the individual *Rotor Thrust* vectors are fixed in relation to the fuselage and we can combine these vectors as the Big Green Arrow to make  the total force the rotors produce easier to visualise. 
 
-Given that the *Rotor* axes, and hence the Rotor Thrust vectors, are fixed with relation to the quad’s fuselage, we must tilt the entire fuselage in the direction we want the quad to move. 
+So, to get a quad moving forward without losing altitude, two things must happen. 
+	* The *CPU* must pitch the quad in the desired direction to tilt the Big Green Arrow and provide a horizontal component as *Thrust*, and
+	* it must increase the magnitude of the Big Green Arrow so that the vertical component (*Lift*) still balances the *Weight* of the quad.
 
-To move the quad forward the *CPU* must tilt the whole quad forward. To do that, it increases the Rotor Thrust on the two rear rotors by increasing their *RRPM*. Figure 8.1 shows the initial action the CPU has taken before the quad has started to pitch forward.
+To do this, the CPU individually changes the *RRPM*, and therefore the *Rotor Thrust*, of each of the four rotors. Given that the *Rotor* axes, and the Rotor Thrust vectors, are fixed with relation to the quad’s fuselage, this tilts the entire fuselage in the direction we want the quad to move. 
+
+To move the quad forward the CPU must pitch the whole quad forward. To do that, it increases the Rotor Thrust on the two rear rotors by increasing their RRPM. Figure 8.1 shows the initial action the CPU has taken to initiate the pitch forward.
 (img)
 You can see that the RRPM of the two rear rotors has increased, giving a greater Rotor Thrust on those two rotors, but as yet, the quad has not pitched forward or commenced to move forward.
 
-Some internal command changes are occurring within the CPU too. It ceases to maintain its hover position with reference to the GPS and starts to pursue a forward *Ground Speed* as commanded by the magnitude of the control input we have put into the control stick in our hand. It also determines that a small amount of increased Rotor Thrust is required to help increase the length of the Big Green Arrow as the quad pitches, so that the *Lift* still equals the *Weight*.
+Some internal command changes are occurring within the CPU at this time too. It ceases to maintain its hover position with reference to the GPS and starts to pursue a forward *Ground Speed* as commanded by the magnitude of the control input we have put into the control stick in our hand. 
+
+The CPU also determines that a small amount of increased Rotor Thrust on *all* rotors are required to help increase the length of the Big Green Arrow as the quad pitches so that the *Lift* still equals the *Weight*.
 
 Figure 8.2 shows the situation as the quad settles into a stable forward ground speed with all forces in balance.
 (img)
-Here we have all the same concepts that were introduced in the single disk discussion. If you look closely you can see that the horizontal (cyan) *Thrust* vector is equally opposed by the (red) *Drag* vector and the (yellow) *Lift* vector balances the (orange) *Weight* vector. The quad is said to be un *unaccelerated level flight*.
+Here we have all the same concepts that were introduced in the single disk discussion. If you look closely you can see that the horizontal (cyan) *Thrust* vector is equally opposed by the (red) *Drag* vector and the (yellow) *Lift* vector balances the (orange) *Weight* vector. The quad is said to be in *level unaccelerated flight*.
 
-All rotors are spinning faster than they were in the hover to maintain the power required to keep the quad at the same altitude and overcome drag to move is forward at the desired speed.
+All rotors are spinning faster than they were in the hover to provide the power required to keep the quad at the same altitude and to overcome  the drag produced during forward flight at the desired speed.
 
-To increase speed, without losing altitude, we must increase the length of the Thrust vector. As before, we must tilt the Big Green Arrow further forward *and* increase its length. To do that, two things must be done:
-	* all rotors must spins faster than before to increase the 
-	* the rear rotors must spin faster than the front one to provide the pitch attitude required.
+To increase speed, without losing altitude, once again the CPU must increase the length of the yellow Thrust vector. As before, it must tilt the Big Green Arrow further forward *and* increase its length. To do that, two things must be done:
+	* all rotors must spin faster than before to increase the magnitude of the Big Green Arrow, and 
+	* the rear rotors must spin faster than the front ones to provide the pitch attitude required.
 
-Figure 8.3 illustrates a quad in high speed flight:
+Figure 8.3 illustrates a quad in high-speed flight:
 (img)
 Once again, all the vectors are in balance. Depending on the type and role of the particular quadcopter, this may be close to the maximum speed the quad can go without losing altitude.
 
 ##Lateral Movement
 
-As mentioned at the head of this chapter, the design layout of the quadcopter means that, from an aerodynamic point of view, there is no ‘front’ as is the case for an aircraft or other type of vehicle. So to move a quad laterally or backwards just means that the *CPU* commands different rotors to spin at difference speeds to achieve the inputs that the command sticks give it.
+As mentioned at the head of this chapter, the design layout of the quadcopter means that, from an aerodynamic point of view, a quadcopter has no ‘front’ as is the case for an aircraft or another type of vehicle. So to move a quad laterally or backwards just means that the *CPU* commands different rotors to spin at difference speeds to achieve the inputs that the command sticks give it.
 
-As an example, Figure 8.4 illustrates a quad in a 30° roll to the right, which would quickly lead to a rapid movment to the quad’s right.
+As an example, Figure 8.4 illustrates a quad in a 30° roll to the right, which would quickly lead to a rapid movement to the quad’s right.
 (img)
 
 ##Limits to Quadcopter Speed
@@ -60,16 +65,25 @@ The aerodynamic profile of the quadcopter’s fuselage, landing gear, camera, et
 
 To accelerate the aircraft, the cyan *Thrust* vector must exceed the red vector and, as we have already seen, the cyan vector is produced by tilting and lengthening the Big Green Arrow. To increase this vector, we must increase the *Rotor Thrust* produced by each rotor.
 
-The *CPU* must command all four rotors to perform as it requires to control the quad. That means as soon as one rotor reaches its limit, the CPU cannot require any further increases in aircraft performance. 
+###Control Authority
+To maintain the pitch attitude on the quad that is required to provide the necessary Thrust, by definition, the front rotors must be spinning at less than their full capacity. Additionally, the usual requirement to keep the quad at a reasonably level altitude (so it does not descend into the terrain) means that the *Lift* vector must always be approximately equal to *Weight* and so the pitch attitude has limits too. 
 
-There are aerodynamic limits to how fast rotors can spin, but in the case of quadcopters the limitation is usually simply the maximum speed of the motors. The quad’s firmware will have limits programmed into it and the CPU will prevent these limits being exceeded. 
+So you can see that there are a number of imperatives for safe, high speed flight and the *CPU* must command all four rotors to perform as it requires to control the quad. Everything is a compromise.
 
+This means as soon as one rotor reaches its limit, or the CPU cannot maintain the desired control, there can be no further increases in aircraft performance. 
+
+###Mechanical Factors
+There are aerodynamic limits to how fast rotors can spin but in the case of quadcopters, the limitation is usually simply the maximum speed of the motors. The quad’s firmware will have limits programmed into it and the CPU will prevent these limits being exceeded. 
+
+###Power Available
 Another limit will simply be the amount of battery power available. Commanding a flight profile that requires all four rotors at their maximum speed (some sort of high speed climb) is likely to exceed the power that the battery can provide. The CPU will limit performance in this case also.
 
+###Regulations
 The final limit may be a legal limit, set by the FAA or some other regulatory authority. This will be hard coded into the CPU and will be relative to the GPS speed of the aircraft. By definition, this will be a *Ground speed* limit not an *Airspeed* limit. We will discuss the significance of this difference soon.
 
 ##Control in Flight
 
+###Climbing and Descending
 Unsurprisingly, moving your quad in three dimensions at once is a combination of all the above. Within the limits I discussed above, the CPU can move the quad simultaneously vertically and horizontally, and in some cases can even conduct aerobatic manoeuvres.
 
 Just keep in mind that it is all about changing the magnitude and direction of the Big Green Arrow and how it overcomes the negatives of *Drag* and *Weight*.
@@ -77,11 +91,20 @@ Just keep in mind that it is all about changing the magnitude and direction of t
 While climbing and descending in forward, rearward or sideways flight is fairly easy to understand as a combination of the above techniques, turning requires just a little more explanation.
 
 ###Turning
-When an airplane or helicopter turns, that is changes it’s heading, it normally banks in the direction it want to turn. That means that the pilot rolls the aircraft to an angle of bank, say 30°, and uses the rudder or tail rotor pedals to ‘coordinate the turn’. This means that while the aircraft turns, we the passengers or crew only feel a downwards force - a slight increase in the force we normally fell due to gravity - and no sideways force.
+When an aeroplane or helicopter turns, that is when it changes it’s heading, it normally banks in the direction it wants to turn. This means that the pilot rolls the aircraft to an angle of bank, say 30°, and uses the rudder or tail rotor pedals to ‘coordinate the turn’. 
 
-This is different to driving a car. In this case, assuming we are driving on flat ground, the front wheels provide the turning force and we, the car’s occupants, feel a sideways force which moves our bodies towards the outside of the turn. In aerodynamic  terms, this is called ‘skidding’ and is undesirable. It would cause your breakfast to slide off your tray table!
+If done correctly, a coordinated turn means that while the aircraft turns, we the passengers only feel a downwards force - a slight increase in the force we normally feel due to gravity - and no sideways force.
+
+This is different to driving a car. In a car, assuming we are driving on flat ground, the front wheels provide the turning force and the car’s occupants feel a sideways force which moves our bodies towards the outside of the turn. In aerodynamic  terms, this is called ‘skidding’ and is undesirable. It would cause your breakfast to slide off your tray table!
 
 Because quadcopters are less sophisticated than larger aircraft, and they don’t carry passengers, their designers have decided to use the skidding method to turn the quad. So when you want to change the heading of the quad, for example to bring it home, you use the yaw control stick and the CPU commands a yaw in the direction we asked for and the quad ’skids’ its way to the new heading.
 
-What all this means is that quad’s are ’steered’ in a similar way to cars and not the way aircraft are usually turned. If you have some flying experience you might find this a little weird at first. If you want to know a little more about the technicalities, Wikipedia has a [good explanation].
+What all this means is that quads are ’steered’ in a similar way to cars and not the way aircraft are usually turned. If you have some flying experience you might find this a little weird at first. If you want to know a little more about the technicalities of airborne turning, Wikipedia has a [good explanation].
 
+##What’s Next
+
+Next, we are going to look at some of the less desirable aerodynamic issues that you may encounter while flying your quad. Ignorance of some of the ‘gotchas’ has caused many people to lose, or at least damage, their expensive assets. 
+
+Understanding the pitfalls should help you minimise the risk to your quad and enable many safe, fun hours of flying.
+
+And by the way, as far as I’m aware, there are no aerodynamic aspects to the infamous ‘flyaway’. So I’m afraid the following chapter is unlikely to help you with that risk.
