@@ -1,8 +1,79 @@
 %%Title: Hazardous Conditions
 %%%%Version: v1.0
 %%Date: 2017-01-17 07:42:56
-##Hazardous Conditions
+## Hazardous Conditions
+
+> ### tl;dr
+> Flying an expensive quadcopter can be hazardous, both to the quad and surrounding people and structures. It may also be hazardous to other aircraft if you don’t follow the rules for your own location and circumstances.
+> 
+> In this chapter, as in the others, we focus on the aerodynamic hazards to quadcopters. A failure to understand and counter these risks can easily lead to the destruction of your quad.
+> 
+> There are no ‘quick fixes’ or ‘knowledge nutshells’ I can write in here in a dozen words or so. You need to read and understand the paragraphs in this chapter to avoid the risks.
+
+## Revision of Relevant Theory and Concepts
+### Density Altitude
+We have previously discussed the issue of the density of the air molecules and the impact on aerofoils and the production of *Lift* of high density altitudes. 
+
+Briefly, the hotter the ambient air and the higher above sea level you are flying your quad, the less lift can be produced by the *Rotors*. This will mean that the electric motors have to spin faster to provide the *Rotor Thrust* that the *CPU* needs to manoeuvre the quad. 
+
+There may still be enough performance available to hover and flying sedately, but more aggressive manoeuvring may not be possible without loos of control.
+
+For more details you should go back to [The Atmosphere](https://quadynamics.wordpress.com/2016/07/22/the-atmosphere/ "Quadynamics/The Atmosphere") and [The Aerofoil](https://quadynamics.wordpress.com/2016/08/08/the-aerofoil/ "Quadynamics/The Aerofoil") pages.
+
+### Ground speed v Airspeed
+We have also touched on the difference between these to speeds, or more correctly - velocities, in [The Atmosphere](https://quadynamics.wordpress.com/2016/07/22/the-atmosphere/ "Quadynamics/The Atmosphere") and [The Aerofoil](https://quadynamics.wordpress.com/2016/08/08/the-aerofoil/ "Quadynamics/The Aerofoil") pages previously.
+
+Both are essential to quadcopter operations for different reasons and it is important to understand the differences to avoid hazardous flying conditions.
+
+*Airspeed* is defined as the velocity of the *Aerofoil* or *Rotor* blade as it passes through the surrounding air. Depending on the aerofoil cross section, and other variables, the lift produced is proportional to the square of the velocity of the *Relative Air Flow* or *RAF*.
+
+It is true that any rotary wing aircraft, including quads, make their own ‘airspeed’ by spinning rotors. But it is still important to understand that during flight, any aircraft operates with respect to the surrounding air not necessarily its speed over the land or *Ground speed*.
+
+As ‘wind’ is simply the movement of the local air mass relative to the ground, it is possible for a quad to be moving relative to the ground at ‘zero airspeed’ and vice versa. For more, really interesting info on this subject have a look at my friend John’s excellent tutorial on the [wind triangle](http://www.recreationalflying.com/tutorials/navigation/wind.html) and other related concepts.
+
+The relevance of Ground Speed comes in when we consider that most modern quads use GPS for position, altitude and velocity information. As GPS receivers derive their data relative to satellites in fixed positions around the globe, the velocity they see is alway relative to the ground.
+
+This means that, depending on the wind, the airspeed a quad experiences may be quite different to the ground speed the CPU is demanding. This is especially the case when the speed of the quad is close to the limits of GPS ground speed the preprogrammed limits in the firmware of the CPU. In fact in a zero ground speed perfect hover, the quad may have a negative airspeed of several metres per second if it is heading downwind.
+
+
+### Aircraft Control
+
+A typical quad has four *Rotors*, each consisting of two horizontally opposed rotor blades. As we have discussed, the *CPU* achieves control of the aircraft by independently varying the *RRPM* of each rotor so that the combined *Lift* vectors move the aircraft in three-dimensional space as required by the operator.
+
+Whilst the CPU usually has external sensors (eg GPS) to provide spatial feedback, it has a fixed programmed logic to deal with variations in performance. In other words, the CPU has to make assumptions about the rotor performance, the atmosphere and other variables. 
+
+If an aerodynamic affect causes a performance discrepancy from the logical models the CPU knows, it may not have the ‘thought processes’ or control authority to adjust the *Rotor Thrust* to maintain control of the aircraft. As the CPU relies on all rotors to perform as expected, if an individual rotor experiences difficulties, the remaining correctly performing rotors may not be able to react sufficiently to maintain control.
+
+only one rotor has to glitch
+
+
+### Vertical Column of Air
+
+
+## Vortex Ring State
+### The Theory
+
+### VRS in a Quad
+
+## High Speed Instability
+ 
+
+## Retreating Blade Stall
+
+When a helicopter or quad moves rapidly forward, the *Airspeed* of the aircraft affects the airspeed of the rotors in different ways.
 
 VRS, hi airspeed, RBS?
 
-only one rotor has to glitch
+
+
+
+Nav tutorial: [http://www.recreationalflying.com/tutorials/navigation/wind.html](http://www.recreationalflying.com/tutorials/navigation/wind.html)
+
+
+## Other Things to Think About
+
+ - Hazards to other people, both those aware of your activities and other people going about their daily activities
+- Privacy
+* Hazards to aircraft
+* Flyaway and aircraft loss
+* Do you really need those carbon fibre blades?

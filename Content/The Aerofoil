@@ -3,19 +3,19 @@
 %%Date: 8 August 2016
 #The Aerofoil
 
->###tl;dr
->*Aerofoils* are specially designed and constructed to produce a force called *Lift* as they move through the air. Other forces, such as *Drag*, *Thrust* and *Weight* also act on the aerofoil as it moves.
+> ### tl;dr
+> *Aerofoils* are specially designed and constructed to produce a force called *Lift* as they move through the air. Other forces, such as *Drag*, *Thrust* and *Weight* also act on the aerofoil as it moves.
 > 
 > The Lift an aerofoil produces depends on a number of factors, some of which are beyond our control as quadcopter operators. Others, such as the rotational speed of the *Rotors* and hence the velocity of the air passing the aerofoil, can be adjusted and this is how we control the quadcopter as we fly it.
 
 
 
-##Intro
+## Intro
 In this chapter, I’m not going to attempt to establish how *Aerofoils* work and *Lift* is produced in any great detail. However, I will summarise the concepts and I suggest some links for you to visit if you are interested in finding out more. I encourage you to do this.
 
-##What is an Aerofoil
+## What is an Aerofoil
 
-An *Aerofoil* (or ‘airfoil’ for North Americans) describes the cross section of a wing, rotor, rudder, propeller or other lifting surfaces. They come in many shapes and sizes and are usually designed for a specific purpose or application. For a broad description and more information go to the [Airfoil] page on Wikipedia.
+An *Aerofoil* (or ‘airfoil’ for North Americans) describes the cross section of a wing, rotor, rudder, propeller or other lifting surfaces. They come in many shapes and sizes and are usually designed for a specific purpose or application. For a broad description and more information go to the [Airfoil](https://en.wikipedia.org/wiki/Airfoil) page on Wikipedia.
 
 If you take some time to read that Wikipedia page you will see that there are a few characteristics of aerofoils that help define it. While they may vary in size, two key qualities help define the type of aerofoil:
 * The *Chord* Line is defined as a straight line joining the leading edge with the trailing edge. 
@@ -23,15 +23,15 @@ If you take some time to read that Wikipedia page you will see that there are a 
 
 On the diagram below you can see pictorial descriptions of the Chord and Camber lines. This aerofoil has an *Angle of Attack* of zero degrees, which is defined as the angle between the *Relative Air Flow (RAF)* and the *Chord* Line. This means it is streamlined to the direction of travel which usually implies it is producing the least *Drag* or wind resistance.
 
-(img)
+![](Fig1_Clean_Aerofoil_0aoa.gif "Fig 1 - Basic Aerofoil")
 
-##How Lift is Produced
+## How Lift is Produced
 
 As an *Aerofoil* moves forward through the air, it displaces some of that air. Unless the aerofoil is perfectly symmetrical and perfectly aligned with the direction of the *RAF*, some of the air is forced away from the aerofoil. 
 
 In this case, the force applied to move the air is opposed, in and equal and opposite sense, to the aerofoil. Those familiar with basic physics will have heard of Newton’s Third Law; this effect on the aerofoil is an example of that Law.
 
-###Basic Forces
+### Basic Forces
 
 This force that moves the *Aerofoil* is called the ‘Total Reaction’ or the ‘Total Aerodynamic Force’. For convenience, aerodynamicists resolve this force into two vectors:
 * *Lift*  - the vector that opposes gravity in normal circumstances, and
@@ -43,15 +43,15 @@ To keep things in balance at this stage, two further ‘equal and opposite’ fo
 
 This diagram shows these four forces in equilibrium. In this case, the aerofoil has an *Angle of Attack* of 10 degrees. You can see that the *Chord Line* is at 10 degrees relative to the horizontal, which is the direction of the *RAF*.
 
-(img)
+![](Fig2_Forces_Aerofoil_10aoa.gif "Fig 2 - Basic Forces on an Aerofoil")
 
-##What Affects the Lift
+## What Affects the Lift
 
 The *Lift* produced by an *Aerofoil* can vary due to a number of reasons. Some are within our control, either in the design and contraction phase or when operating the quadcopter. Others are due to environmental factors beyond our control.
 
-There is a lot of physics and maths theory involved in understanding how lift is produced and controlled. The general concepts are covered well in the [Lift] Wikipedia  page for those who want more info. I suggest you continue reading here then follow up there for any concepts that you need further explained. 
+There is a lot of physics and maths theory involved in understanding how lift is produced and controlled. The general concepts are covered well in the [Lift](https://en.wikipedia.org/wiki/Lift_(force) "Lift") Wikipedia  page for those who want more info. I suggest you continue reading here then follow up there for any concepts that you need further explained. 
 
-###Aerofoil Design
+### Aerofoil Design
 
 For our purposes, the main design criterion an *Aerofoil* needs for its specific task is its profile or *Camber*. The actual cross-sectional shape of the aerofoil can be symmetrical, that is the *Camber Line* and the *Chord Line* are coincident, or asymmetric, where the Camber varies, sometimes significantly, from the Chord Line. 
 
@@ -59,9 +59,9 @@ An aerofoil’s thickness, or more specifically its thickness to chord (or t/c) 
 
 Most quadcopters have an aerofoil that is moderately cambered with a low t/c ratio, or ‘thin’ profile. This provides a compromise between Lift production at the relatively high speed of rotation of the blades and the Drag that is produced and hence the power of the motors required to spin them.
 
-For those really keen to learn more, try the [NACA Airfoil] Wikipedia page.
+For those really keen to learn more, try the [NACA Airfoil](https://en.wikipedia.org/wiki/NACA_airfoil "NACA Airfoil") Wikipedia page.
 
-###Angle of Attack
+### Angle of Attack
 
 As a fixed *Aerofoil* design moves through the air at a constant velocity it would be beneficial to be able to vary the *Lift* produced. This is done by changing the *Angle of Attack (AoA)* of the aerofoil to the *Relative Air Flow (RAF)* and thus changing the amount and direction that the aerofoil moves the air out of its path. 
 
@@ -71,11 +71,11 @@ So, increasing the AoA, up to a specific angle, proportionally increases the amo
 
 So in this next figure, you can see that increasing the **α** to 22 degrees gives a corresponding increasing in Lift. Because to is actually the Total Reaction that is increased, we also get a corresponding increase in Drag. *Thrust* must be increased to counter the Drag if we want to maintain equilibrium. The increased Lift would normally cause the aerofoil (and the attached aircraft) to increase altitude or climb. In this illustration, the *Weight* has increased and so the aerofoil remains at equilibrium.
 
-(img)
+![](Fig3_Forces_Aerofoil_22aoa.gif "Fig 3 - Increased AoA")
 
 When a certain **α** (that is particular to the design of the aerofoil but usually between 20 and 25 degrees) is exceeded, the airflow over its surface breaks away and becomes turbulent. This means the aerofoil is unable to force the air downwards and hence Lift is dramatically reduced. In this case, the aerofoil is said to be ‘stalled’.
 
-There are many Youtube videos available that show wind tunnel video of aerofoils in smoke streamlines that may help you visualise these concepts. Two good ones are [here] and [here].
+There are many Youtube videos available that show wind tunnel video of aerofoils in smoke streamlines that may help you visualise these concepts. Two good ones are [here](https://www.youtube.com/watch?v=6UlsArvbTeo) and [here](https://www.youtube.com/watch?v=3_WgkVQWtno).
 
 In a fixed wing aircraft, whilst the wings are set at a fixed angle to the aircraft fuselage, the Angle of Attack of its wings to the *RAF* can be varied by adjusting the tailplane and elevators. This ‘pitch attitude’ change adjusts the Angle of Attack and hence the Lift produced by the wings and determines whether the aircraft climbs or descends.
 
@@ -83,21 +83,21 @@ A helicopter works similarly with the pitch angle of the *Rotor* blades being ab
 
 In the case of our quadcopters, however, you will have noticed that the rotor (or propeller) blades are fixed to the hub  and hence the Angle of Attack is fixed by the construction of the rotors. So how can we control the Lift?
 
-###Velocity 
+### Velocity 
 
-As we have learned above, as an *Aerofoil* moves through the air it displaces some of the air away from itself. If you have read the Wikipedia articles on *[Lift]* you will know that in a normal aviation application aerofoils are mounted in a way to deflect this air downwards and hence provide an upwards force to counter gravity.
+As we have learned above, as an *Aerofoil* moves through the air it displaces some of the air away from itself. If you have read the Wikipedia articles on *[Lift](https://en.wikipedia.org/wiki/Lift_(force) "Wikipedia on Lift")* you will know that in a normal aviation application aerofoils are mounted in a way to deflect this air downwards and hence provide an upwards force to counter gravity.
 
 It follows that the quicker the aerofoil moves through the air, more air is displaced and hence more lift is created. As the lift force exceeds the *Weight* (which is also a force, described as the mass of the aircraft multiplied by the acceleration due to gravity) the aircraft climbs. This fact is the reason why planes must accelerate along a runway to takeoff.
 
-It happens that *Velocity* is so important to the production of lift that its effect is proportional to its *square* (that is, velocity times velocity). To learn more, read about it on the [NASA] website.
+It happens that *Velocity* is so important to the production of lift that its effect is proportional to its *square* (that is, velocity times velocity). To learn more, read about it on the [NASA](https://www.grc.nasa.gov/www/k-12/airplane/vel.html "Velocity Effects on Aerodynamic Forces") website.
 
 With normal planes and helicopters, whilst velocity is important for lift production, their sophistication allows other design features, such as controls that change their aerofoils *AoA*, to help control their lift so they can climb and descend. For quadcopters, with fixed angles of attack on their rotors, the only available method of lift control is velocity. The various motors that drive the quad’s rotors are able to increase and decrease their speed as required by the quad’s CPU to control the quad as commander by you as you pilot the aircraft around. We will see how this is done in further chapters. 
 
-###Air Density
+### Air Density
 
 We have seen that an *Aerofoil’s* production of *Lift*, and by necessity *Drag*, is dependent on shifting a mass of air downwards (in the case of wings and rotors). The more air that is moved, the more lift is created. As we need this lift to exceed *Weight* (which, in the case of quadcopters, is a fixed amount), we need increasing amounts of lift to climb the quad and fly it around.
 
-The density of air decreases as *Pressure Altitude* (that is, the height above sea level) increases. This is due to two main factors. Firstly, the closer the air molecules are to the centre of the earth, the greater the gravitational attraction, and secondly, the air near the surface of the earth has more molecules above it and the ‘weight’ of these molecules helps compress the air near the surface more. See [this link] for a greater explanation.
+The density of air decreases as *Pressure Altitude* (that is, the height above sea level) increases. This is due to two main factors. Firstly, the closer the air molecules are to the centre of the earth, the greater the gravitational attraction, and secondly, the air near the surface of the earth has more molecules above it and the ‘weight’ of these molecules helps compress the air near the surface more. See [this link](http://www.npl.co.uk/reference/faqs/why-does-air-density-and-pressure-change-with-altitude-(faq-mass-and-density) "National Physical Laboratory on Air Density") for a greater explanation.
 
 *Air Density* is also affected by the temperature (and to a lesser extent, the humidity) of the air. Simply put the hotter air molecules whizz around more and take up more volume than cooler ones. If the same number of molecules are in a larger space, the density is less. This principle explains how a hot air balloon works.
 
@@ -107,13 +107,13 @@ This relationship between the pressure, temperature and humidity of air is descr
 
 This concept of density altitude is why some manufacturers advise a maximum altitude for the operation of their quads. On a hot day, in a high place, the motors may not be able to spin the rotors fast enough to provide the lift to control the quad satisfactorily. We will explore this concept more in future chapters.
 
-###Area
+### Area
 
 Up until now, we have concentrated on an *Aerofoil* which is essentially a two-dimensional shape. If we extend an aerofoil in 3D we get an increase in lift that is proportional to the area of the wing or rotor. This is due to the 3D aerofoil interacting with a greater number of air molecules along its length. 
 
 The absolute length, and hence area, is a compromise of course, with rotor designers having to contend with the strength and tensile requirements of a longer rotor with the management of the mass of the component and therefore its effect on the weight of the aircraft.
 
-##Lift Formula
+## Lift Formula
 
 So we have seen that the *Lift* produced by an *Aerofoil* is dependent on a number of factors. They are:
 * Aerofoil design
@@ -124,7 +124,7 @@ So we have seen that the *Lift* produced by an *Aerofoil* is dependent on a numb
 
 For the mathematically inclined,  aerodynamicists have developed a Lift Formula which looks like this:
 
->Lift = CL ½ **ρ** v2 A
+> Lift = CL ½ **ρ** v2 A
 
 where:
 * CL is the ‘Coefficient of Lift’ which combines all the fixed factors of a particular aerofoil, or rotor blade. These include:
@@ -138,20 +138,15 @@ The formula, therefore, advises us that the lift produced, and hence the perform
 
 Fortunately, we can control one key factor: the velocity of the blades as they travel through the air. How that works and how we can control our quad is what we will discuss in the next chapter.
 
-%%For next chapter:
-%%
-%%Minimise discussion re changing AoA as it is not relevant here. Only enough to into washout, minimise bending moment. 
-%%
-%%Mention that drag is the force that slows the rotors when the thrust/motors is stopped.
 
-##Further Reading
-###Wikipedia
-* [Airfoils]
-* [ Lift ]
-* [Air Density]
+## Further Reading
+### Wikipedia
+* [Airfoils](https://en.wikipedia.org/wiki/Airfoil)
+* [ Lift ](https://en.wikipedia.org/wiki/Lift_(force) "Lift")
+* [Air Density](https://en.wikipedia.org/wiki/Density_of_air "Wikipedia's air density page")
 
-###NASA
-* [Airfoil Design]
-* [Velocity]
+### NASA
+* [Airfoil Design](https://www.grc.nasa.gov/www/k-12/problems/Lorri/Design_Airfoil_int.htm "Airfoil Simulator")
+* [Velocity](https://www.grc.nasa.gov/www/k-12/airplane/vel.html "Velocity Effects on Aerodynamic Forces")
 
 

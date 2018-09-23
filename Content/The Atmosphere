@@ -1,17 +1,17 @@
 %%Title: The Atmosphere
-%%Version: v1.4
-%%Date: 8 Aug 2016
+%%Version: v1.5
+%%Date: 2017-01-24 12:28:10
 ## The Atmosphere
 
->###tl;dr
->
->The atmosphere is complex. You should know that many factors that you may not have thought about could affect the performance  of your quad. Your *Elevation* above sea level is one, as is the effect of wind and turbulence.
->
->Greater temperatures and/or height above sea level leads to reduced quad flying performance. Failing to be more cautious in windy or turbulent conditions may also be hazardous.
->
->It is possible to lose control of your quad if you don't consider these and other aerodynamic effects.
+> ### tl;dr
+> 
+> The atmosphere is complex. You should know that many factors that you may not have thought about could affect the performance  of your quad. Your *Elevation* above sea level is one, as is the effect of wind and turbulence.
+> 
+> Greater temperatures and/or height above sea level leads to reduced quad flying performance. Failing to be more cautious in windy or turbulent conditions may also be hazardous.
+> 
+> It is possible to lose control of your quad if you don't consider these and other aerodynamic effects.
 
-In this, and any other discussion, a term with a capital letter and in *italics* is defined on the [Key Terms] page.
+In this, and any other discussion, a term with a capital letter and in *italics* is defined on the [Key Terms](https://quadynamics.wordpress.com/2016/07/16/key-terms/) page.
 
 There are many atmospheric properties that influence ’normal’ or commercial aviation, such as flight in cloud, icing, and transonic effects that are not relevant here. But there are three qualities of the atmosphere that do relate to flying quads at the altitudes that they are operated (Quadsphere?). Let’s discuss them. 
 
@@ -23,7 +23,7 @@ For example, at Denver CO - roughly 5,500 feet above sea level, on a standard da
 
 As you will see soon, *Lift* is produced as an aerofoil moves through the air. The *Lift* produced is proportional to a number of factors, with air density being the main one. So it follows that *Lift* (and therefore the *Weight* that an aircraft can carry) reduces as the *Density Altitude* increases.
 
-Air density is usually represented by the greek letter **ρ** (rho) and Wikipedia has [more info] if you need it.
+Air density is usually represented by the greek letter **ρ** (rho) and Wikipedia has [more info](https://en.wikipedia.org/wiki/Density_of_air) if you need it.
 
 ## Wind
 
@@ -33,8 +33,7 @@ Normally, an aircraft's *Airspeed* performance is only constrained by *Air Densi
 
 However, with GPS-equipped quads, whose maximum speeds are usually limited by a GPS sensed *Ground Speed*, wind can become a factor at higher speeds, especially with high-performance quads. 
 
-The effect of the *Wind* is really only relevant as the quad approaches the ground. As we will see later, an understanding of the *Wind* and how it may impact on the desired flight profile is crucial to avoid some of the more dangerous conditions, such as Vortex Ring State. We will investigate this further in [Forward Flight].
-
+The effect of the *Wind* is really only relevant as the quad approaches the ground. As we will see later, an understanding of the *Wind* and how it may impact on the desired flight profile is crucial to avoid some of the more dangerous conditions, such as Vortex Ring State. 
 
 ## Turbulence
 
@@ -46,7 +45,7 @@ The turbulence we feel in an aircraft is the effect of the rapidly changing *Lif
 
 With a quad, turbulence is not about comfort but instead can cause control difficulties as the software struggles to sense the quad’s attitude and altitude changes and send the required control signals to the appropriate rotors. This can especially be a problem when the quad is near to the ground, landing or taking off. This is one of the reasons that your quad manufacturer may advise you not to fly it in high winds.
 
-##Further Reading
+## Further Reading
 
-If you are interested to know a little more about the fundamentals relating to the atmosphere, here is some [good background] courtesy of Decoded Science.
+If you are interested to know a little more about the fundamentals relating to the atmosphere, here is some [good background](http://www.decodedscience.org/aircraft-performance-in-relation-to-atmospheric-pressure-density-and-temperature/4889) courtesy of Decoded Science.
 

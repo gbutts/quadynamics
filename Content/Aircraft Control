@@ -1,41 +1,41 @@
 %%Title: Aircraft Control
 %%Version: v1.1
 %%Date: 2017-01-11 10:07:46
-#Aircraft Configuration and Hover Control
+# Aircraft Configuration and Hover Control
 
->###tl;dr
->In a typical quadcopter, four rotors are mounted in the extremities of the fuselage to provide *Lift* and control. Hexacopters use 6 rotors to provide the same control, but are usually capable of carrying a greater payload/camera.
+> ### tl;dr
+> In a typical quadcopter, four rotors are mounted in the extremities of the fuselage to provide *Lift* and control. Hexacopters use 6 rotors to provide the same control, but are usually capable of carrying a greater payload/camera.
 > 
 > In the hover we can control the quadcopter in all three axes (pitch, roll and yaw) by adjusting the *RRPM,* and therefore the *Rotor Thrust,* of each *Rotor*. Controlling these three axes allows us to move the quad vertically and horizontally through the air.
 
-##What We Already Know
-So far we have looked at how a moving *Aerofoil*, and a spinning *Rotor Disk*, produces a force by moving air downwards. For the rotor disk we call this force *Rotor Thrust*. We have determined that for a quadcopter the only option we have to vary that thrust is to vary and control the angular velocity of the *Rotor* blades. The conventional way to measure this is called the *Rotor RPM* or *RRPM*.
+## What We Already Know
+So far we have looked at how a moving *Aerofoil*, and a spinning *Rotor Disk*, produces a force by moving air downwards. For the rotor disk, we call this force *Rotor Thrust*. We have determined that for a quadcopter the only option we have to vary that thrust is to vary and control the angular velocity of the *Rotor* blades. The conventional way to measure this is called the *Rotor RPM* or *RRPM*.
 
 We know that the faster the rotor spins, the more rotor thrust it produces. We also know that we can break the rotor thrust vector down into vertical (*Lift*) and horizontal (*Thrust*) components. In stable flight, these components balance and oppose the aircraft’s *Weight* and *Drag* vectors.
 
 We will now look at how we can use a combination of rotor disks to fly and control a quadcopter. 
 
-##Configuration
+## Configuration
 The primary quadcopter configuration, and the one I will deal mainly with here, is an aircraft that has a central fuselage and four *Rotors* in each ‘corner’. 
 
 The fuselage normally houses the *CPU*  and the battery. It also provides mounts for ancillaries, such as a camera or a hopper. The landing gear, fixed or retractable, is usually mounted below.
 
 In Figure 7.0 you can see how I depict a quad in this document. It is shown as it would be sitting on the ground with its *Rotors* idling, producing minimal *Lift*.
-(img)
-Quadcopters may also be configured with two rotors fore and aft and two laterally. From an aerodynamic point of view there is little difference with this config, as the ‘front’ of a quadcopter is often irrelevant to its operation.
+![](Fig%207.0%20-%20Idle%20wm.jpg "Figure 7.0 - Quad on the Ground at Idle")
+Quadcopters may also be configured with two rotors fore and aft and two laterally. From an aerodynamic point of view, there is little difference with this config, as the ‘front’ of a quadcopter is often irrelevant to its operation.
 
 Hexacopters have six rotors and often have retractable landing gear. They are usually designed to be larger, more stable and carry greater payloads. Aerodynamic considerations are broadly similar. I will deal with specific hex issues later on.
 
-In all cases, the rotors are mounted rigidly, usually at the end of pylons or outriggers. The rotor is mounted horizontally with it’s *Thrust* axis vertically upwards. Each rotor is driven by a motor, also mounted on the pylon, which is powered electrically and controlled by the *CPU*.
+In all cases, the rotors are mounted rigidly, usually at the end of pylons or outriggers. The rotor is mounted horizontally with its *Thrust* axis vertically upwards. Each rotor is driven by a motor, also mounted on the pylon, which is powered electrically and controlled by the *CPU*.
 
 The rigid mount means that the rotor can spin of course, but cannot move in the pitch or roll axes relative to the body (fuselage and outriggers) of the quadcopter. 
 
-##Control in the Hover
-As discussed in the previous chapter, the only ‘control’ we have over the rotors is increasing or decreasing their *RRPM*. If you have skipped that discussion, you should go [back] and review it now.
+## Control in the Hover
+As discussed in the previous chapter, the only ‘control’ we have over the rotors is increasing or decreasing their *RRPM*. If you have skipped that discussion, you should go [back](https://quadynamics.wordpress.com/2016/10/05/rotor-dynamics/ "Rotor Dynamics") and review it now.
 
-These changes in RRPM are controlled by the *CPU*, it would be far too hard to do this manually. In most modern quads, the CPU receives internal control inputs from the GPS receiver and external inputs from your controller. Higher performance quads can be controlled without a GPS, but for now, we will only consider the more basic concept where a GPS keeps the quad stable and, with our controller we can move it where we want it to go.
+These changes in RRPM are controlled by the *CPU*, it would be far too hard to do this manually. In most modern quads, the CPU receives internal control inputs from the GPS receiver and external inputs from your controller. Higher performance quads can be controlled without a GPS, but for now, we will only consider the common basic concept where a GPS keeps the quad stable and, with our controller we can move it where we want it to go.
 
-The GPS provides a position to the CPU in three dimensions. That is, laterally in the form of a latitude and longitude, and vertically, in the form of an altitude. This altitude position is actually relative to the centre of the earth, but the CPU is clever and takes the initial, start up position and calls that zero and measures subsequent altitudes relative to that position.
+The GPS provides a position to the CPU in three dimensions. That is, laterally in the form of a latitude and longitude, and vertically, in the form of an altitude. This altitude position is actually relative to the centre of the earth, but the CPU is clever and takes the initial, start-up position and calls that zero and measures subsequent altitudes relative to that position.
 
 The CPU is programmed to maintain the current GPS position unless it receives an external input from the controller in your hand. You control this external input by moving the two control sticks. These sticks can move the quad in the following ways:
 * Climb and descend
@@ -43,53 +43,53 @@ The CPU is programmed to maintain the current GPS position unless it receives an
 * Sideways, and
 * Yaw, that is changing the heading of the quad around its vertical axis.
 
-These changes can be made in isolation, that is one control stick is moved in one direction only; or both sticks can be moved in a coordinated way to make the quad move in three dimensional space efficiently.
+These changes can be made in isolation, that is one control stick is moved in one direction only, or both sticks can be moved in a coordinated way to make the quad move in three-dimensional space efficiently.
 
 Let’s start by assuming that our quad is in a stable hover about 1 metre or 3 feet above the ground as shown in Figure 7.1.
-(img)
+![](Fig%207.1%20-%20Hover%20no%20BGA%20wm.jpg "Figure 7.1 - Hover")
 You can see that each rotor is providing an equal amount of lift (the four green arrows are the same length). You can also see that adjacent rotors are turning in opposite directions. I have coloured the rear arrows red and the front ones white for orientation. The width of these arrows, as before, indicates the relative RRPM. 
 
 Because each rotor disk is providing an equal amount of lift everything is level and stable. The total of the four equal green vectors is exactly equal and opposite to the orange weight vector and so the quad doesn’t climb or descend. As it is a little hard to see the relative length of the various lift vectors it is better to combine these into a single Big Green Arrow as you can see in the following figure.
-(img)
+![](Fig%207.2%20-%20Hover%20BGA%20wm.jpg "Figure 7.2 - Hover with a BGA")
 
-##Climbing and Descending
+## Climbing and Descending
 With the lateral position being controlled by the CPU with reference to the GPS, climbing and descending the quad is straight forward. To make the quad go up, we manipulate the control stick to sign; to the CPU that we want the quad to climb. It commands the electric motors to increase the RRPM of all four rotors equally. 
 
-You will remember that the amount of lift produced by an aerofoil is proportional to the velocity of that aerofoil squared so, for example, the RRPM does not have to be doubled to provide double the lift. If you are a little hazy on this concept, the explanation is [here].
+You will remember that the amount of lift produced by an aerofoil is proportional to the velocity of that aerofoil squared so, for example, the RRPM does not have to be doubled to provide double the lift. If you are a little hazy on this concept, the explanation is [here](https://quadynamics.wordpress.com/2016/08/08/the-aerofoil/ "Aerofoils and Lift").
 
 So, when the CPU spins each rotor faster, each one produces more *Lift*. The total lift represented by the Big Green Arrow is now greater than the weight of the quad, represented by the orange *Weight* vector and the quad rises vertically.
-(img)
+![](Figure%207.3%20-%20Vertical%20climb)
 
 Similarly, if you want the quad to descend, moving the relevant control stick commands the CPU to reduce the RRPM of all rotors so that less lift is produced and the lift vector has a lesser magnitude than the weight vector.
-(img)
+![](Fig%207.4%20-%20Hover%20descent%20wm.jpg "Figure 7.4 - Vertical Descent")
 
-##Torque Reaction
-Before we move on to yawing a quadcopter, we need to learn a little more about *Torque Reactions*. You may have noticed that most helicopters have a tail rotor as well as a main rotor. Without getting too technical, the tail rotor is required to counter the torque reaction on the helicopter’s fuselage caused by the engine and transmission driving the main rotor. If you want to know more, you can read more about helicopter anti-torque design features [here].
+## Torque Reaction
+Before we move on to yawing a quadcopter, we need to learn a little more about *Torque Reactions*. You may have noticed that most helicopters have a tail rotor as well as a main rotor. Without getting too technical, the tail rotor is required to counter the torque reaction on the helicopter’s fuselage caused by the engine and transmission driving the main rotor. If you want to know more, you can read more about helicopter anti-torque design features [here](https://en.wikipedia.org/wiki/Helicopter#Anti-torque_features "Helicopter Anti-torque").
 
 In the case of quadcopters, this torque reaction from the electric motors turning each rotor still exists. The designers counter it with an elegant concept that does away with the requirement, complexity and weight of an anti-torque system but still provides the lift and control required. 
 
 By changing the direction of rotation of two of the four rotors the torque reactions usually cancel out. That is why you will notice that adjacent rotors have their blades mounted so the angle of attack is opposite and those rotors rotate in opposite directions. 
 
-##Yawing
+## Yawing
 Yawing is what occurs when you change the heading of the quad in the hover. When it yaws, a quad rotates around the vertical or ‘Z’ axis.
 
 The way the *CPU* yaws the quad is a little more complex than simple climbing and descending. It involves manipulating the torque reaction and how the rotors rotate with respect to each other. The torque reaction is caused by, as is proportional to, the motor’s effect on the fuselage as it spins the rotor. So, the higher the *RRPM*, the greater the Torque Reaction. 
 
 Let’s assume again that the quad is in a stable hover about one metre (3 feet) above the ground and heading North. Without moving fore/aft or laterally and without changing altitude, we want to change the quad’s heading left around to South, through West. To command this yaw we move the appropriate control stick to the left to tell the CPU our intentions. The CPU takes care of the difficult coordination of the quad’s *Rotors* to control the yaw.
 
-Usually, with all rotors turning at the same RRPM, the sum of the individual torque reactions from each rotor cancel each other out. The CPU adjusts this situation to ‘unbalance’ the individual torque reactions so that there is a residual turning moment around the central Z axis of the quad. By changing the RRPM of each rotor, the CPU can control this residual moment and change the quad’s heading. Figure 7.8 shows a turn to the left in an oblique view. 
-(img)
-Figure 7.9 shows the view from directly above.
-(img)
+Usually, with all rotors turning at the same RRPM, the sum of the individual torque reactions from each rotor cancel each other out. The CPU adjusts this situation to ‘unbalance’ the individual torque reactions so that there is a residual turning moment around the central Z axis of the quad. By changing the RRPM of each rotor, the CPU can control this residual moment and change the quad’s heading. Figure 7.5 shows a turn to the left in an oblique view. 
+![](Fig%207.5%20-%20Yaw_oblique%20wm.jpg "Figure 7.5 - Yawing Moments")
+Figure 7.6 shows the view from directly above.
+![](Fig%207.6%20-%20Yaw_vertical%20wm.jpg "Figure 7.6 - Yawing Moments from Directly Above ")
 You can see that the CPU has increased the RRPM of the left front and rear right rotors, and hence their *Rotor Thrust* (green vectors) and also their torque reaction (light blue arrows). The CPU has reduced the RRPM of the other two rotors and their rotor thrust and torque reaction (pink arrows) have reduced. The yaw that the quad undergoes is indicated by the larger blue arrow.
 
 It is important to note that the sum of the four rotor thrusts, as represented by the Big Green Arrow, are still equal and opposite to the *Weight* vector and hence the quad does not climb or descend.
 
 As the quad’s heading approaches South, we can take out the control stick input and command the CPU to stop the yaw. It controls the four rotors’ RRPM so that the rotor thrust and torque reactions equalise and the quad settles into a stable hover again.
 
-##What’s Next
-Next we will look at Forward Flight and how we can fly our quad and have some fun.
+## What’s Next
+Next, we will look at Forward Flight and how we can fly our quad and have some fun.
 
-##Further Reading
-Black Tie Aerial’s [Physics of Quadcopter Flight]
-Wikipedia’s [Quadcopter Flight Dynamics]
+## Further Reading
+Black Tie Aerial’s [Physics of Quadcopter Flight](http://blacktieaerial.com/the-physics-of-quadcopter-flight/)
+Wikipedia’s [Quadcopter Flight Dynamics](https://en.wikipedia.org/wiki/Quadcopter#Flight_dynamics)

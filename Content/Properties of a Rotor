@@ -2,21 +2,21 @@
 %%Version: v1.0
 %%Date: 2016-08-12 10:20:42
 %%Uploaded: 2016-09-06 12:00:00
-#Properties of a Rotor
+# Properties of a Rotor
 
->###tl;dr
->Aerofoils are extended in three dimensions to become wings or rotors. The forces on these rotors are what provide the power to lift, control and fly a quadcopter.
->
->Rotors are designed for specific purposes and applications. A key difference between quad rotor systems and others, for example on a helicopter, is that most lift variables are fixed and only the rotational speed, or angular velocity, is varied to change the lift of each individual rotor.
+> ### tl;dr
+> Aerofoils are extended in three dimensions to become wings or rotors. The forces on these rotors are what provide the power to lift, control and fly a quadcopter.
+> 
+> Rotors are designed for specific purposes and applications. A key difference between quad rotor systems and others, for example on a helicopter, is that most lift variables are fixed and only the rotational speed, or angular velocity, is varied to change the lift of each individual rotor.
 
-##What We Already Know
+## What We Already Know
 In the previous chapter, we discussed aerofoil design and how we might employ it to provide *Lift* to oppose *Weight*. We saw how moving an aerofoil through air forces some of that air downwards and how the aerofoil gains lift as a result. 
 
 In the case of a fixed wing aircraft, this is achieved by moving its wings through the air. But with rotary wing aircraft, such as helicopters and quadcopters, the movement through the air can be gained by spinning suitably designed and constructed rotor blades. As we discussed, there are several variables that control the amount of lift produced by an aerofoil and therefore a rotor. 
 
 In this chapter, we will expand on these principles.
 
-##Forces on a Rotor Blade
+## Forces on a Rotor Blade
 
 Here is a refresher on the forces on an aerofoil as it moves through the air:
 * *Lift*  - the vector that opposes gravity in normal circumstances, and
@@ -29,26 +29,26 @@ For the next little while, we can assume that the Weight is constant with the ve
 You will remember that the force applied to the aerofoil is called the *Total Reaction or TR*. Lift and drag are the vector components of this TR. They change as the environment and the quad’s controls change to counter the outside environment and/or to move the quad around.
 
 A rotor blade or wing is an aerofoil extended in 3D. When it moves through the air, lift is produced along the full span. We have seen previously that in the lift formula, one of the variables is the area of the wing, that is, the length of its chord multiplied by the length or ‘span’ of the wing. You can see that concept illustrated in Figure 5.1 below. Below that is the *Lift Formula* if you need a refresher.
-(img)
+![](Fig5.1%20BasicAerofoil%202D_Watermarked_2.jpg "Lift across an aerofoil")
 
 Lift Formula:
-	>Lift = CL ½ ρ v2 A
+> Lift = CL ½ ρ v2 A
 
 If the aerofoil cross section is the consistent across the wing, the lift produced is (theoretically) equal across it as it moves through the air. If the angle of attack remains constant, the only way that we can change the amount of lift produced is by increasing the velocity of the wing. The faster it goes, the more lift produced. This is why fixed wing aircraft need runways for take-off and landing. Their wings only produce enough lift to carry them airborne once they reach a certain *Airspeed*.
 
 The whole point, of course, of helicopters and quads is to be able to hover, which means that the lift produced by the rotor must exceed the weight of the aircraft while it has zero airspeed. To achieve this, the rotors spin and the aerofoils can produce lift as they rotate.
 
-##Design of a Rotor Blade
+## Design of a Rotor Blade
 So, let’s consider Figure 5.2
-(img)
+![](Fig5.2%20Basic%20Rotate%20no%20washout_Watermarked_1.jpg "Basic Rotor Design Considerations")
 The *Aerofoil* from Fig 5.1 is now mounted on a hub and is spinning at a constant *RRPM*. Its *Angle of Attack* is fixed by the hub (at 10 degrees in this case), the aerofoil cross-section is constant and the rotor system itself is not moving through the air. As expected, the *Rotor* is producing some lift, as indicated by the green arrows, but their height, representing the force produced, is not constant across the *Span* of the rotor.
 
 How is this so if everything is constant?
 
-Of course, the Lift Formula provides the answer and points us to the fact that the velocity of the air over the span of the spinning rotor increases as we move from the hub to the tip. Wikipedia tells us that [angular velocity] is proportional to the radius and the RPM of a particle moving around an origin. So, in our case, the *Airspeed* of a section of the rotor as it rotates increases as we move towards the tip. 
+Of course, the Lift Formula provides the answer and points us to the fact that the velocity of the air over the span of the spinning rotor increases as we move from the hub to the tip. Wikipedia tells us that [angular velocity](https://en.wikipedia.org/wiki/Angular_velocity "Wikipedia's Angular Velocity page") is proportional to the radius and the RPM of a particle moving around an origin. So, in our case, the *Airspeed* of a section of the rotor as it rotates increases as we move towards the tip. 
 
 Because the Lift Formula tells us that the lift produced is proportional to the square of the velocity, the green arrows increase exponentially from the hub to the tip. Figure 5.3 shows this more clearly.
-(img)
+![](Fig5.3%20Exponential%20Lift_Watermarked_1.jpg "Lift Increasing Exponentially")
 But while this increase in lift may seem desirable, it comes with one distinct disadvantage. Applying an increased force a relatively long way from the hub creates a significant bending moment on the rotor blade, forcing the blade itself to rise at the tip. This reduces the efficiency of the rotor but worse still, creates stresses and ultimately fatigue that may cause the blade to fail. To stiffen the blade to resist this force usually means weight or cost penalties. Helicopter and quad design engineers want to avoid both.
 
 So a design method has been developed to reduce this spanwise increase in lift without requiring additional strengthening of the rotor and avoiding the weight penalty.
@@ -58,43 +58,43 @@ As the increase in span-wise *RAF* is unavoidable with rotor aerodynamics, other
 * Decreasing the Chord Line dimension reduces the area of sections of the blade near the tip thus reducing the lift produced. This is called *Taper.*
 
 Figure 5.4 illustrates the concept:
-(img)
+![](Fig5.4%20Aerofoil%20washout%20taper_Watermarked_1.jpg "Rotor Washout and Taper")
 If you look carefully at your quad’s rotor blade, you should be able to see both its *Washout* and *Taper*. DJI Phantom blades display considerable taper while Yuneec blades are less noticeable. Usually, the washout is a little less pronounced than the illustration above with the AoA running from about 10° at the root to 2-3° at the tip.
 
 So, looking back on our rotor system model, if we adapt the blade with both washout and taper we can see that the lift is now more evenly distributed across the span:
-(img)
+![](Fig5.5%20Basic%20Rotate%20washout%20taper_Watermarked_1.jpg "Rotor blade with washout and taper")
 
 For any spinning object, dynamic balance is very important. Therefore, rotor assemblies are constructed such that the centre of gravity of the whole system is coincident with the centre of rotation. The easiest way to do this for our quadcopter is to attach another identical blade on the opposite side of the hub.
 
 Now with an extra blade attached and the washout and taper built in, the only variable now required to control the lift equally across the rotating blades is the *RRPM* of the rotor. Speed up the rotation and the lift increases, slow it down and the lift reduces. It is convenient and far simpler to indicate this lift as a single arrow that grows and shrinks with changes to the RRPM is shown below in Figure 5.6.
-(img)
+![](Fig5.6-Basic-Rotate-BGA-2r_Watermarked_1.jpg "Big Green Arrow")
 We are going to call this the ‘Big Green Arrow’. It represents the *Rotor Thrust* of the spinning blade assembly or *Rotor disk*.
 
-##Better Graphics
+## Better Graphics
 
-So now I am going to introduce some more representative graphics. I have modelled all of the coming graphics and illustrations on my Yuneec 4K. I have developed an [OpenSCAD] 1:1 scale model of it and will use it in future chapters as we go through the more advanced concepts. But first, let’s look at a standalone rotor assembly and disk. Figure 5.7 shows a rotor and motor assembly:
-(img)
+So now I am going to introduce some more representative graphics. I have modelled all of the coming graphics and illustrations on my Yuneec 4K. I have developed an [OpenSCAD](http://www.openscad.org/ "OpenSCAD") 1:1 scale model of it and will use it in future chapters as we go through the more advanced concepts. But first, let’s look at a standalone rotor assembly and disk. Figure 5.7 shows a rotor and motor assembly:
+![](Fig5.7%20Rotor%20model_Watermarked_1.jpg "Stopped Rotor")
 Here is the spinning rotor disk which I use in future chapters. You can see the Big Green Arrow and a circular arrow that indicates the direction and speed of rotation. The taller the Big Green Arrow, and the thicker the crimson arrow, the faster the rotor is spinning and the more *Lift* it is producing.
-(img)
+![](Fig5.8%20Rotor%20disk_Watermarked_1.jpg "Rotor Disk")
 
-##What’s Next
+## What’s Next
 
 In the next chapter, we are going to look at the forces related to an individual rotor disk. We will build on this to see how all four rotors come together to control our quad through all of its flight regimes. As a primer, here is a graphic showing our quad, shutdown but ready to go:
-(img)
+![](Fig5.9%20Stopped_quad_Watermarked_1.jpg "Stopped Quad")
 
-##Further Reading
+## Further Reading
 Wikipedia
-[Asymmetry of Lift]
+[Asymmetry of Lift](https://en.wikipedia.org/wiki/Asymmetry_of_lift "Equalising lift across the span of a rotor blade")
 
-##Further Discussion
+## Further Discussion
 
 During the development of these last couple of chapters, I did some reading about racing quads. This is not an area I am familiar with but it is worth a quick few paragraphs to link them to the discussion above.
 
-Take a look at this page: [5 Fastest Racing Drones] (I hope it hangs around for a while!) I want you to focus on the rotor blades that are fitted to these racing quads (I dislike the term ‘drone’).
+Take a look at this page: [5 Fastest Racing Drones](http://heavy.com/tech/2016/03/best-drone-racing-fastest-racing-drones-to-buy-fpv-racer-quadcopter/) (I hope it hangs around for a while!) I want you to focus on the rotor blades that are fitted to these racing quads (I dislike the term ‘drone’).
 
 Whilst I acknowledge that we haven’t gone into the details around the control of quads yet, we have covered the basics above and we can discuss how this type of quad is controlled. 
 
-Clearly, the main priorities for these types of quads are speed and manoeuvrability. To achieve this, they not only need lots of *Rotor Thrust* but they also need to be able to change this thrust (max to min and back again) quickly and responsively. To make this work what the rotor system doesn’t need is lots of [angular momentum]. If you get into that Wikipedia link there, you can see that angular momentum is a function of RPM and the mass of the spinning body.
+Clearly, the main priorities for these types of quads are speed and manoeuvrability. To achieve this, they not only need lots of *Rotor Thrust* but they also need to be able to change this thrust (max to min and back again) quickly and responsively. To make this work what the rotor system doesn’t need is lots of [angular momentum](https://en.wikipedia.org/wiki/Angular_momentum "Wikipedia"). If you get into that Wikipedia link there, you can see that angular momentum is a function of RPM and the mass of the spinning body.
 
 A racing quad’s rotors need to spin up quickly but similarly need to slow down (and reduce the lift they are producing) quickly also. 
 
